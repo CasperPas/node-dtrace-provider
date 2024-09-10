@@ -15,7 +15,8 @@ var err = null;
 
 for (var i = 0; i < builds.length; i++) {
     try {
-        var binding = require('./src/build/' + builds[i] + '/DTraceProviderBindings');
+        var requirePath = './src/build/' + builds[i] + '/DTraceProviderBindings';
+        var binding = require(requirePath);
         DTraceProvider = binding.DTraceProvider;
         break;
     } catch (e) {
